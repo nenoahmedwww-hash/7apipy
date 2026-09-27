@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حنين وأحمد ❤️</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff758c, #ff7eb3, #ff416c);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            border-radius: 25px;
+            padding: 25px;
+            max-width: 420px;
+            width: 100%;
+            box-shadow: 0 15px 35px rgba(255, 75, 110, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            text-align: center;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 1.9rem;
+            margin-bottom: 5px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        .subtitle {
+            color: #ffe6eb;
+            font-weight: bold;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .welcome {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            border-right: 4px solid #fff;
+        }
+
+        .menu-btn {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            border: none;
+            padding: 14px;
+            margin: 8px 0;
+            width: 100%;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 65, 108, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .menu-btn:active {
+            transform: scale(0.98);
+        }
+
+        .panel {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .calc-btn {
+            background: #fff;
+            color: #ff416c;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-size: 0.95rem;
+        }
+
+        .res-box {
+            margin-top: 12px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .counter-num {
+            font-size: 2.2rem;
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 0 0 10px #ff416c;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>حنين & حمودتي ♥</h1>
+    <div class="subtitle">يوم 3 11 كان اهم يوم في حياتي كلها و في حياتك ولا عندك شك😒♥</div>
+
+    <div class="welcome">
+        أهلاً بك يا أحلى دكتور في الدنيا! ✨<br>
+        <strong>من البشمهندسة اللي بموت فيك ♥</strong>
+    </div>
+
+    <button class="menu-btn" onclick="openSection('counter')">⏳ عدّاد أيام حبنا من 3/11</button>
+    <button class="menu-btn" onclick="openSection('loveCalc')">💖 نسبة حب حمودتي وحنين</button>
+    <button class="menu-btn" onclick="openSection('messages')">💌 رسائل الحب لحمودتي</button>
+    <button class="menu-btn" onclick="openSection('reasons')">✨ أسباب حب حمودتي</button>
+
+    <!-- عداد الايام -->
+    <div id="counter" class="panel">
+        <h3 style="color:#fff;">⏳ بقالنا مع بعض:</h3>
+        <div id="daysNum" class="counter-num">0</div>
+        <p style="font-size:0.95rem;">يوم من أجمل أيام حياتي بداية من 3/11 ♥</p>
+    </div>
+
+    <!-- حاسبة الحب -->
+    <div id="loveCalc" class="panel">
+        <h3 style="color:#fff;">💖 نسبة التوافق والحب</h3>
+        <p style="margin-top:10px; font-size:1.1rem;">البشمهندسة + الدكتور = ؟</p>
+        <button class="calc-btn" onclick="checkLove()">اضغط هنا لشوف النسبة ✨</button>
+        <div id="loveRes" class="res-box"></div>
+    </div>
+
+    <!-- رسائل حب -->
+    <div id="messages" class="panel">
+        <h3 style="color:#fff;">💌 رسائل الحب</h3>
+        <p style="margin-top:12px; font-size:1.05rem;" id="msgText">اضغط للحصول على رسالة الحب الأولى!</p>
+        <button class="calc-btn" onclick="getNewMessage()">الرسالة التالية 🌸</button>
+    </div>
+
+    <!-- أسباب حب حمودتي -->
+    <div id="reasons" class="panel">
+        <h3 style="color:#fff;">✨ أسباب حب حمودتي</h3>
+        <ul style="list-style:none; margin-top:10px; line-height:1.9; text-align:right;">
+            <li>1/ حنيتك و حبك ليا و طريقتك اللي بحسك فيها احن حد في الدنيا</li>
+            <li>2/ انت كل حاجه و اجمل حاجه في حياتي ♥</li>
+            <li>3/ قولتلك انت مفيش زيك تااني ♥😔</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    function openSection(id) {
+        document.querySelectorAll('.panel').forEach(p => p.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+        if(id === 'counter') calculateDays();
+    }
+
+    function calculateDays() {
+        const startDate = new Date('2023-11-03'); 
+        const today = new Date();
+        const diffTime = Math.abs(today - startDate);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        document.getElementById('daysNum').innerText = diffDays + " يوم";
+    }
+
+    function checkLove() {
+        document.getElementById('loveRes').innerText = "100% وبموت فيك والله♥♥♥♥♥♥♥♥♥";
+    }
+
+    const msgs = [
+        "الاولي. انا بحبك اوي يحمودتي ربنا يخليك بيا ينور عيني و ميحرمنيش منك ابدا",
+        "الثانيه. يارب يحمودتي تفضل دايما سند ليا و حبيبي ♥",
+        "التالته . علشان تعرف اني بشمهندسه قد الدنيا يا دكتور 😂♥",
+        "الرابعه. بحبك اوي و بموت فيك والله♥♥♥♥♥♥♥♥♥"
+    ];
+
+    let currentIndex = 0;
+
+    function getNewMessage() {
+        document.getElementById('msgText').innerText = msgs[currentIndex];
+        currentIndex = (currentIndex + 1) % msgs.length;
+    }
+</script>
+
+</body>
+</html>
