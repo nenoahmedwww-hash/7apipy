@@ -174,10 +174,11 @@
     }
 
     function calculateDays() {
-        const startDate = new Date('2023-11-03'); 
+        // حساب الأيام من 3 نوفمبر 2025
+        const startDate = new Date('2025-11-03'); 
         const today = new Date();
-        const diffTime = Math.abs(today - startDate);
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        const diffTime = today - startDate;
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
         document.getElementById('daysNum').innerText = diffDays + " يوم";
     }
 
@@ -186,7 +187,7 @@
     }
 
     const msgs = [
-        "الاولي. انا بحبك اوي يحمودتي ربنا يخليك بيا ينور عيني و ميحرمنيش منك ابدا",
+        "الاولي. انا بحبك اوي يحمودتي ربنا يخليك ليا ينور عيني و ميحرمنيش منك ابدا",
         "الثانيه. يارب يحمودتي تفضل دايما سند ليا و حبيبي ♥",
         "التالته . علشان تعرف اني بشمهندسه قد الدنيا يا دكتور 😂♥",
         "الرابعه. بحبك اوي و بموت فيك والله♥♥♥♥♥♥♥♥♥"
